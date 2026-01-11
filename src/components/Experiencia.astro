@@ -1,0 +1,57 @@
+---
+type experiencia = {
+    cargo: string;
+    compañia: string;
+    fechaInicioYSalida: string;
+    actividadsRealizadas: string;
+};
+
+const arregloExperiencia: experiencia[] = [
+    {
+        cargo: "Desarrollador de software",
+        compañia: "GeoSat",
+        fechaInicioYSalida: "01/09/2024-Actual",
+        actividadsRealizadas: `Mantenimiento de aplicación web de la alcadía de medellín creada
+            para la gestión de la malla vial de la ciudad. Creación de
+            componentes web y endpoints para el sistema de gestión de espacios
+            públicos de la alcaldía de medellín.`,
+    },
+    {
+        cargo: "Practicante de Automatizaciones",
+        compañia: "Holcim",
+        fechaInicioYSalida: "01/01/2024-01/06/2024",
+        actividadsRealizadas: ` Realice las siguientes automatizaciones: 1) una automatización en
+            googlesheets con appscript que permitía la gestión de la aprobación
+            de pagos en 7 diferentes países. 2) Realicé una automatización
+            usando googleshet y appscript el cual gestionaba el flujo de caja 8
+            paises y permítia el envío de correos a la unidad de tesorería. 3)
+            Realicé una automatizacion usando SAP y Word el cual trasladaba
+            información de pagos de créditos de SAP a un informe de word`,
+    },
+    
+    
+];
+---
+
+<section id="Experiencia" class="justify-items-center">
+    <h1 class="text-4xl text-yellow-300">Mi experiencia</h1>
+
+    {
+        arregloExperiencia.map(({cargo,compañia,fechaInicioYSalida,actividadsRealizadas}) => {
+            return (
+                <div class="mt-5 xl:pl-60 xl:pr-60 sm:pl-30 sm:pr-30 pl-5 pr-5 w-3/4">
+                    <h4 class="text-2xl text-amber-200 bol">
+                        {cargo}
+                    </h4>
+                    <h3 class="text-2xl">{compañia}</h3>
+                    <p>{fechaInicioYSalida}</p>
+                    <p>
+                        {actividadsRealizadas}
+                    </p>
+                </div>
+            );
+        })
+    }
+
+   
+</section>
