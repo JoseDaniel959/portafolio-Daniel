@@ -37,7 +37,6 @@ const arregloExperiencia: experiencia[] = [
 
 <section id="Experiencia" class="justify-items-center">
     <h1 class="text-4xl text-yellow-300">Mi experiencia</h1>
-
     {
         arregloExperiencia.map(({cargo,compañia,fechaInicioYSalida,actividadesRealizadas}) => {
             return (
@@ -46,8 +45,6 @@ const arregloExperiencia: experiencia[] = [
                     compañia={compañia}
                     fechaInicioYSalida={fechaInicioYSalida}
                     actividadesRealizadas={actividadesRealizadas}
-
-
                 />
             );
         })
