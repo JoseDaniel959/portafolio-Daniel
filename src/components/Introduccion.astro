@@ -1,7 +1,7 @@
 ---
 import Button from "./Buttons/Button.astro";
 import SVGLinkedIn from "./SVGComponents/SVGLinkedIn.astro";
-import SVGGithub from "./SVGComponents/SVGGithub.astro"
+import SVGGithub from "./SVGComponents/SVGGithub.astro";
 ---
 
 <section id="introduccion" class="my-40 md:grid grid-cols-2">
@@ -9,34 +9,32 @@ import SVGGithub from "./SVGComponents/SVGGithub.astro"
         class="rounded-full border-4 border-solid border-indigo-700 w-3xs h-14s justify-self-center xl:ml-40"
         src="https://avatars.githubusercontent.com/u/79713968?v=4"
     />
-    <div class="text-center md:text-left">
+    <div class="text-center md:text-left lg:mr-100">
         <h1 class="text-5xl">
             Hola, me llamo <br />
             <span class="text-indigo-600">Jose Daniel Bustamante Arango</span>
         </h1>
         <h2 class="text-2xl">
-            soy <span class="text-indigo-700">programador FullStack</span> con 1 año
+            soy <span class="text-indigo-700">programador FullStack</span> con 2 años
             de experiencia y me gusta el desarrollo de aplicaciones web.
         </h2>
         <div class="mt-3">
             <ul class="flex gap-x-2.5 max-md:justify-center">
-                
-                    <Button 
-                        nombre="LinkedIn" 
-                        SVG="2"
-                        link="https://www.linkedin.com/in/jos%C3%A9-daniel-bustamante-arango-008773212/"
-                        >
-                        <SVGLinkedIn />
-                    </Button>
-               
-                <Button 
-                    nombre="GitHub" 
+                <Button
+                    nombre="LinkedIn"
+                    SVG="2"
+                    link="https://www.linkedin.com/in/jos%C3%A9-daniel-bustamante-arango-008773212/"
+                >
+                    <SVGLinkedIn />
+                </Button>
+
+                <Button
+                    nombre="GitHub"
                     SVG="2"
                     link="https://github.com/JoseDaniel959"
-                    >
+                >
                     <SVGGithub />
                 </Button>
-                
             </ul>
         </div>
     </div>
