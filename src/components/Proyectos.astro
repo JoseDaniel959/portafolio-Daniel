@@ -1,16 +1,16 @@
 ---
 import Button from "./Buttons/Button.astro";
 import SVGGithub from "./SVGComponents/SVGGithub.astro";
-import imagenPruebaTecnica from "../assets/pruebaTecnica.png"
-import imagenToDoAppHexagonal from "../assets/ToDoAppHexagonal.png" 
-import imagenToDoAppFront from "../assets/toDoAppImage.png" 
-
+import imagenPruebaTecnica from "../assets/pruebaTecnica.png";
+import imagenToDoAppHexagonal from "../assets/ToDoAppHexagonal.png";
+import imagenToDoAppFront from "../assets/toDoAppImage.png";
 
 type Proyecto = {
     titulo: string;
     descripcion: string;
     linkRepositorio: string;
     imagenSrc: string;
+    altText: string;
 };
 
 const arregloProyectos: Proyecto[] = [
@@ -20,24 +20,18 @@ const arregloProyectos: Proyecto[] = [
                     HTML,CSS y Bootstrap 5. Contiene responsive design.`,
         linkRepositorio: "https://github.com/JoseDaniel959/Prueba-Tecnica",
         imagenSrc: imagenPruebaTecnica.src,
+        altText: "Pantallazo de Prueba Técnica",
     },
     {
         titulo: "To Do App",
-        descripcion: `To do App realizada Next.js y React BootStrap. Esta app
-                    realiza operaciones CRUD sobre la API ToDoApp. Contiene
-                    responsive design.`,
-        linkRepositorio:
-            "https://github.com/JoseDaniel959/Todo-App/tree/master",
-        imagenSrc: imagenToDoAppFront.src,
-    },
-    {
-        titulo: "API ToDoApp",
-        descripcion: `API realizada con Express.js, Prisma ORM y Postgres.
+        descripcion: `To do App realizada Next.js, React, BootStrap.
+                    API realizada con Express.js, Prisma ORM y Postgres.
                     Contiene operaciones CRUD básicas sobre tareas. Construída
                     con arquitectura hexagonal.`,
         linkRepositorio:
-            "https://github.com/JoseDaniel959/API-ToDoApp/tree/master",
-        imagenSrc: imagenToDoAppHexagonal.src,
+            "https://github.com/JoseDaniel959/Todo-App/tree/master",
+        imagenSrc: imagenToDoAppFront.src,
+        altText: "Pantallazo de To Do App",
     },
 ];
 ---
@@ -61,7 +55,7 @@ const arregloProyectos: Proyecto[] = [
                                 <p class="ml-9">{descripcion}</p>
                                 <div class="ml-9 mt-1.5">
                                     <Button
-                                        nombre="GitHub"
+                                        nombre="Código"
                                         SVG="2"
                                         link={linkRepositorio}
                                     >
