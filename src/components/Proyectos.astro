@@ -1,9 +1,10 @@
 ---
-import Button from "./Buttons/Button.astro";
-import SVGGithub from "./SVGComponents/SVGGithub.astro";
 import imagenPruebaTecnica from "../assets/pruebaTecnica.png";
-import imagenToDoAppHexagonal from "../assets/ToDoAppHexagonal.png";
+import imagenJuegoDeTrivia from "../assets/JuegoTriviaSpring.png";
 import imagenToDoAppFront from "../assets/toDoAppImage.png";
+import imagenSpringWebFlux from "../assets/SpringWebFlux.png";
+
+import CardProyecto from "./Cards/CardProyecto.astro";
 
 type Proyecto = {
     titulo: string;
@@ -15,14 +16,6 @@ type Proyecto = {
 
 const arregloProyectos: Proyecto[] = [
     {
-        titulo: "Prueba Técnica",
-        descripcion: `Prueba técnica para desarrollador FrontEnd. Realizada con
-                    HTML,CSS y Bootstrap 5. Contiene responsive design.`,
-        linkRepositorio: "https://github.com/JoseDaniel959/Prueba-Tecnica",
-        imagenSrc: imagenPruebaTecnica.src,
-        altText: "Pantallazo de Prueba Técnica",
-    },
-    {
         titulo: "To Do App",
         descripcion: `To do App realizada Next.js, React, BootStrap.
                     API realizada con Express.js, Prisma ORM y Postgres.
@@ -33,6 +26,33 @@ const arregloProyectos: Proyecto[] = [
         imagenSrc: imagenToDoAppFront.src,
         altText: "Pantallazo de To Do App",
     },
+    {
+        titulo: "Spring WebFlux API",
+        descripcion: `Prueba técnica de Accenture para rol de ingeninero backend.
+                      Está reailzada con Java 17 ,Java Spring WebFlux,
+                      Postgres, Docker y Terraform `,
+        linkRepositorio:
+            "https://github.com/JoseDaniel959/Todo-App/tree/master",
+        imagenSrc: imagenSpringWebFlux.src,
+        altText: "Pantallazo prueba técnica Spring WebFlux API",
+    },
+    {
+        titulo: "Trivia Game Spring",
+        descripcion: `Juego de consola sobre preguntas de cultura general,implementado 
+                      en Spring. Es prueba técnica inspirado por EPAM.`,
+        linkRepositorio:
+            "https://github.com/JoseDaniel959/knowledge-checker-task",
+        imagenSrc: imagenJuegoDeTrivia.src,
+        altText: "Pantallazo Trivia Game Spring",
+    },
+    {
+        titulo: "Prueba Técnica",
+        descripcion: `Prueba técnica para desarrollador FrontEnd. Realizada con
+                    HTML,CSS y Bootstrap 5. Contiene responsive design.`,
+        linkRepositorio: "https://github.com/JoseDaniel959/Prueba-Tecnica",
+        imagenSrc: imagenPruebaTecnica.src,
+        altText: "Pantallazo de Prueba Técnica",
+    },
 ];
 ---
 
@@ -40,31 +60,15 @@ const arregloProyectos: Proyecto[] = [
     <h1 class="text-4xl text-yellow-300">Mis proyectos</h1>
     {
         arregloProyectos.map(
-            ({ titulo, descripcion, linkRepositorio, imagenSrc }) => {
+            ({ titulo, descripcion, linkRepositorio, imagenSrc, altText }) => {
                 return (
-                    <article class="rounded-xl mt-5 w-sm sm:w-2xl md:w-3xl border-b-gray-200 border-2 justify-items-center">
-                        <div class="sm:flex sm:h-60 justify-between">
-                            <img
-                                class="sm:rounded-l-xl rounded-t-xl md:w-auto w-96"
-                                src={imagenSrc}
-                            />
-                            <div class="inline-block align-baseline">
-                                <h1 class="text-2xl font-semibold justify-self-center">
-                                    {titulo}
-                                </h1>
-                                <p class="ml-9">{descripcion}</p>
-                                <div class="ml-9 mt-1.5">
-                                    <Button
-                                        nombre="Código"
-                                        SVG="2"
-                                        link={linkRepositorio}
-                                    >
-                                        <SVGGithub />
-                                    </Button>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                    <CardProyecto
+                        imagenSrc={imagenSrc}
+                        titulo={titulo}
+                        descripcion={descripcion}
+                        linkRepositorio={linkRepositorio}
+                        altText={altText}
+                    />
                 );
             },
         )
